@@ -1,0 +1,812 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root{
+    --purple: #9B72CF;
+    --dark-purple: #3c096c;
+    --mid-purple: #532B88;
+    --black: #444;
+    --grey: #F4EFFA;
+    --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    --border-hover: 0.1 solid var(var(--black));
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.2s ease;
+    transition: width none;
+}
+h1{
+    font-size: 54px;
+    line-height: 60px;
+    color: #222;
+}
+h2{
+    font-size: 3rem;
+    line-height: 2.5rem;
+    color: #222
+}
+h4{
+    font-size: 20px;
+    color: #222;
+}
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+p{
+    font-size: 16px;
+    margin: 15px 0 20px 0;
+    color: #465b52;
+}
+.section-p1{
+    padding: 40px 80px;
+}
+.section-m1{
+    margin: 40px 0;
+}
+body{
+    width: 100%;
+}
+
+button.normal{
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    color: var(--mid-purple);
+    background-color: var(--grey);
+    border-radius: 2rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+button.normal:hover{
+    background-color: var(--mid-purple);
+    color: var(--grey);
+}
+
+button.white{
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    color: var(--grey);
+    background-color: transparent;
+    border: 2px solid var(--grey);
+    cursor: pointer;
+    
+    outline: none;
+}
+button.white:hover{
+    background-color: var(--mid-purple);
+    color: var(--grey); 
+}
+
+/* ***************************************************************************************************** */
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.9rem 3rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    background: var(--purple);
+    font-size: 1.7rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btn:hover{
+    background: var(--dark-purple);
+}
+
+.header .header-1{
+    background-color: #fff;
+    padding: 1.5rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8rem;
+}
+.header-1 a img{
+    height: 6.5rem;
+    width: 14rem ;
+}
+
+.header .header-1 .search-form{
+    width: 50rem;
+    height: 5rem;
+    border: var(--border);
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+.header .header-1 .search-form label{
+    width:5.5rem;
+    padding-left: 1.2rem;
+
+}
+.header .header-1 .search-form:hover{
+    background: var(--purple);
+    color: #fff;
+
+}
+
+.header .header-1 .search-form input{
+    font-size: 1.6rem;
+    padding: 0 1.2rem;
+    height: 100%;
+    width: 100%;
+    text-transform: none;
+    color: var(--black);
+}
+
+.header .header-1 .search-form label{
+    font-size: 2.5rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .search-form label:hover{
+    color: #fff;
+}
+
+.header .header-1 .icons div,
+.header .header-1 .icons a{
+    font-size: 2.5rem;
+    margin-left: 3rem;
+    color: var(--black);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover{
+    color: var(--purple);
+    font-size: 2.7rem;
+}
+
+#search-btn{
+    display: none;
+}
+
+/* ------------------------------- header 2 ------------------------------------ */
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+.header-2{
+    background: var(--purple);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 9%;
+    box-shadow: var(--box-shadow);
+    position: relative;
+}
+
+.header-2.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+}
+
+.header-2 .navbar a{
+    padding: .5rem 1.5rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    color: var(--grey);
+}
+
+.header-2 .navbar a:hover{
+    background: var(--mid-purple);
+    color: #fff;
+}
+
+.header-2 .icons2 a{
+    font-size: 2.5rem;
+    color: var(--grey);
+    border-radius: .5rem;
+    padding-left: 2rem;
+    
+}
+.header-2 .icons2 a sup{
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    font-weight: 400;
+}
+
+.header-2 .icons2 a:hover{
+    color: #fff;
+    font-size: 2.7rem;
+}
+
+
+
+#menu-bar{
+    font-size: 2rem;
+    border-radius: .5rem;
+    border: .3rem solid var(--grey);
+    padding: .6rem 1.2rem;
+    color: var(--grey);
+    cursor: pointer;
+    display: none;
+}
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+
+
+/*  ------------------------login form---------------------------- */
+ .login-form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top: 0;
+    right: -105%;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+ }
+
+ .login-form-container.active{
+    right: 0%;
+ }
+
+ .login-form-container form{
+    background: #fff;
+    border: var(--border);
+    width: 40rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 0.5rem;
+    margin: 2rem;
+ }
+
+ .login-form-container form h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+    text-align: center;
+ }
+
+ .login-form-container form label{
+    display: block;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+ }
+
+ .login-form-container form .box{
+    width: 100%;
+    margin: 0.7rem 0;
+    font-size: 1.6rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    padding: 1rem 1.2rem;
+    color: var(--black);
+    text-transform: none;
+ }
+ .login-form-container form .checkbox{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+ }
+ .login-form-container form .checkbox label{
+    font-size: 1.5rem;
+    color: #444;
+    cursor: pointer;
+ }
+ .login-form-container form  .btn{
+    text-align: center;
+    width: 100%;
+    margin: 1.5rem 0;
+ }
+
+ .login-form-container form p{
+    color: #444;
+    font-size: 1.2rem;
+    margin: 0.3rem 0;
+ }
+ .login-form-container form p a{
+    color: var(--purple);
+    text-decoration: underline;
+    font-weight: 500;
+ }
+ .login-form-container form p a:hover{
+    color: var(--dark-purple);
+    font-weight: 550;
+ }
+
+ .login-form-container #close-login-btn{
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    font-size: 4rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+/* --------------------HERO SECTION------------------------------ */
+
+.hero{
+ background-image: url("images/bg-img1.jpg");
+ height: 80vh;
+ width: 100%;
+ background-size: cover;
+ background-position: top 25% right 0;
+}
+
+/*  feature box */
+#feature{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#feature .feature-box{
+    width: 170px;
+    text-align: center;
+    padding: 1.6rem 1rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    border-radius: 0.25rem;
+    margin: 1rem 0;
+}
+#feature .feature-box:hover{
+    box-shadow: var(--box-shadow-hover);
+}
+
+#feature .feature-box img{
+    width: 100%;
+    margin-bottom: 0.7rem;
+}
+
+#feature .feature-box h6{
+    padding: 0.55rem 0.5rem 0.37rem;
+    display: inline-block;
+    color: var(--mid-purple);
+    line-height: 1;
+    background: var(--grey);
+    
+}
+
+#product1{
+    text-align: center;
+}
+#product1 .pro-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 1.2rem;
+}
+#product1 .pro{
+    position: relative;
+    width: 23%;
+    min-width: 250px;
+    padding: 0.6rem 0.75rem;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: 1.2rem;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+#product1 .pro:hover{
+    box-shadow: var(--box-shadow-hover);
+}
+#product1 .pro img{
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.pro img:hover{
+    transform: scale(1.02);
+    
+}
+#product1 .pro .description{
+    text-align: start;
+    padding: 0.6rem 0;
+}
+#product1 .pro .description span{
+    color: var(--black);
+    font-size: 1.2rem;
+}
+#product1 .pro .description h5{
+    padding-top: 0.45rem;
+    color: #1a1a1a;
+    font-size: 1.5rem;
+}
+#product1 .pro .description i{
+    font-size: 1rem;
+    color: rgb(243, 181, 25);
+}
+#product1 .pro .description h4{
+    padding-top: 0.45rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--mid-purple);
+}
+#product1 .pro .cart{
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+    line-height: 30px;
+    border-radius: 50px;
+    background: var(--mid-purple);
+    color: #fff;
+    border: var(--border);
+    position: absolute;
+    bottom: 1.2rem;
+    right: 1rem;
+}
+#product1 .pro .cart:hover{
+    background: var(--dark-purple);
+    font-size: 1.6rem;
+}
+/* *******************BANNER 1************ */
+
+#banner{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(images/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#banner h4{
+    font-size: 1.5rem;
+}
+#banner h2{
+    font-size: 2.5rem;
+    
+    padding: 1rem 0;
+}
+#banner h2 span{
+    color: var(--mid-purple);
+    font-weight: 750;
+}
+
+/*  small banner */
+
+#small-banner{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#small-banner .banner-box{
+    min-width: 580px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url(images/banner-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 2rem;
+}
+#small-banner .banner-box2{
+    background-image: url(images/sm-banner1.jpg);
+}
+#small-banner h4{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+#small-banner h2{
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 1rem 0;
+}
+#small-banner span{
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+}
+#small-banner .banner-box:hover button{
+    background-color: var(--mid-purple);
+    color: var(--grey); 
+    border: 1px solid var(--mid-purple);
+}
+
+/********************** FOOTER ********************/
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+footer .column{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.7rem;
+}
+footer .footer-logo{
+    height: 5.5rem;
+    width: 12rem ;
+    margin-bottom: 1rem;
+}
+footer h4{
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+}
+footer p{
+    font-size: 1.2rem;
+    margin: 0 0 8px 0;
+}
+footer a{
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: grey;
+}
+footer .follow{
+    margin-top: 1.5rem;
+}
+footer .follow i{
+    color: grey;
+    padding-right: 0.25rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+footer .follow i:hover,
+footer a:hover {
+    color: var(--dark-purple);
+    font-weight: 500;
+    
+}
+ 
+footer .install .row img{
+    border: 1px solid #222;
+    border-radius: 6px;
+}
+ 
+footer .follow img{
+    margin: 1rem 0 1.5rem 0;
+}
+
+footer .copyright{
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  media quries------------------------ */
+@media(max-width:1024px){
+    .hero{
+        height: 50vh;
+    }
+}
+
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header .header-1{
+        padding: 2rem;
+    }
+    .hero{
+        height: 40vh;
+    }
+}
+
+
+@media(max-width:768px){
+
+    html{
+        scroll-padding-top: 0;
+    }
+
+    body{
+        padding-bottom: 6rem;
+    }
+
+    .section-p1{
+        padding: 40px 40px;
+    }
+
+    #menu-bar{
+        display: initial;
+    }
+
+    .header-2 .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 1rem 1rem;
+        display: none;
+    }
+
+  .header-2 .navbar.active{
+    display: initial;
+  }
+
+    .header-2 .navbar a{
+        font-size: 2rem;
+        display:  block;
+        text-align: center;
+        background: var(--purple);
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .bottom-navbar{
+        display: block;
+    }
+
+    #search-btn{
+        display: inline-block;
+    }
+    .header .header-1{
+        box-shadow: var(--box-shadow);
+        position: relative;
+    }
+    .header .header-1 .search-form{
+        position: absolute;
+        top: -115%;
+        right: 2rem;
+        width: 90%;
+        box-shadow: var(--box-shadow);
+    }
+   .header .header-1 .search-form.active{
+        top: 104%;
+        z-index: 1000000;
+   }
+
+   .header .header-1 .icons div,
+    .header .header-1 .icons a{
+        margin-left: 2rem;
+}
+
+.hero{
+    height: 30vh;
+    padding: 0 80px;
+    background-position: top 30% right 30%;
+}
+
+#feature{
+    justify-content: center;
+}
+#feature .feature-box{
+    margin: 20px ;
+}
+#product1 .pro-container{
+    justify-content: center;
+}
+#product1 .pro{
+    margin: 15px;
+}
+#banner {
+    height: 30vh;
+
+}
+#small-banner .banner-box{
+    min-width: 100%;
+    height: 30vh;
+}
+#small-banner .banner-box2{
+    margin-top: 2rem;
+}
+.copyright{
+    margin-bottom: 2rem;
+}
+}
+
+@media(max-width:477px){
+
+    html{
+        font-size: 50%;
+    }
+    .section-p1{
+        padding: 20px;
+    }
+    .hero{
+        height: 20vh;
+        padding: 0 20px;
+        background-position: 55%;
+    }
+    #feature{
+        justify-content: space-between;
+    }
+    #feature .feature-box{
+        width: 155px;
+        margin: 0 0 15px 0;
+    }
+    #product1 .pro{
+        width: 100%;
+    }
+    #banner{
+        height: 25vh;
+    }
+    #small-banner .banner-box {
+        height: 40vh;
+    }
+    .copyright{
+        margin-bottom:0;
+    }
+}
+
+
+
+
+/* *********************************SHOP PAGE************************************************** */
+
+#page-header{
+    background-image: url("images/shop-hero.jpg");
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
